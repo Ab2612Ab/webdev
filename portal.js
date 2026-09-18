@@ -1,5 +1,6 @@
 const defaultSites=[];
 const CATALOG_VERSION='supabase-v1';
+function getAuthRedirectUrl(path=''){const clean=String(path||'').replace(/^\/+/,'');return location.origin+'/'+clean;}
 const sb=window.supabaseClient;
 let cachedSites=[];
 async function getSites(){const {data,error}=await sb.from('website_listings').select('*').order('id');if(error){console.error(error);return []}cachedSites=data||[];return cachedSites}
