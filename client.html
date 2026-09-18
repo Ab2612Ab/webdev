@@ -89,6 +89,18 @@ document.querySelector('#openProject').onclick=async()=>{
     if(error){document.querySelector('#clientMsg').textContent=error.message;return;}
     project=newProject;
   }
+  if(websiteId){
+    const {data:existingPurchase}=await sb.from('purchase_requests').select('id').eq('client_id',user.id).eq('website_id',websiteId).order('created_at',{ascending:false}).limit(1).maybeSingle();
+    if(!existingPurchase){
+      await sb.from('purchase_requests').insert({
+        client_id:user.id,
+        website_id:websiteId,
+        contact_name:name,
+        contact_email:user.email||'',
+        message:'Client opened a purchase/customization workspace for this website.'
+      });
+    }
+  }
   document.querySelector('#clientMsg').textContent='Workspace opened securely.';
   document.querySelector('#projectArea').style.display='block';
   document.querySelector('#statusTitle').textContent=project.project_name+' · '+project.status.replace('_',' ');
