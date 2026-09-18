@@ -8,6 +8,17 @@ function escapeHtml(value){
 function money(value){
   return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(Number(value||0));
 }
+function bindImageFallbacks(root=document){
+  root.querySelectorAll('img').forEach(img=>{
+    if(img.dataset.fallbackBound) return;
+    img.dataset.fallbackBound='1';
+    img.addEventListener('error',()=>{
+      if(img.dataset.imageFailed) return;
+      img.dataset.imageFailed='1';
+      img.src='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000"><rect width="1400" height="1000" fill="#e8e5df"/><text x="700" y="500" text-anchor="middle" dominant-baseline="middle" fill="#777" font-family="Arial,sans-serif" font-size="34">webdev preview</text></svg>');
+    },{once:false});
+  });
+}
 function catalogImage(site){
   return site?.image || 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=88';
 }
@@ -134,6 +145,7 @@ async function initAdmin(){
       const {error}=await sb.from('website_listings').delete().eq('id',b.dataset.delete);
       if(error) alert(error.message); else draw();
     });
+    bindImageFallbacks(list);
     await drawRequests();
     await drawContacts();
   }
@@ -207,6 +219,7 @@ async function initAdmin(){
     if(error){alert(error.message);return;}
     form.style.display='none'; draw();
   };
+  bindImageFallbacks(document);
   document.querySelector('#logout').onclick=async e=>{e.preventDefault();await sb.auth.signOut();location.href='login.html';};
   draw();
 }
