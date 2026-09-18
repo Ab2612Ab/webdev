@@ -126,6 +126,7 @@ async function initAdmin(){
   const form=document.querySelector('#siteForm');
   const requestList=document.querySelector('#requestList');
   const contactList=document.querySelector('#contactList');
+  const purchaseList=document.querySelector('#purchaseList');
   let editing=null;
 
   async function draw(){
@@ -148,6 +149,7 @@ async function initAdmin(){
     bindImageFallbacks(list);
     await drawRequests();
     await drawContacts();
+    await drawPurchases();
   }
 
   async function drawRequests(){
@@ -162,6 +164,17 @@ async function initAdmin(){
     requestList.querySelectorAll('[data-resolve]').forEach(b=>b.onclick=async()=>{
       const {error}=await sb.from('project_requests').update({status:'resolved'}).eq('id',b.dataset.resolve);
       if(error) alert(error.message); else drawRequests();
+    });
+  }
+
+  async function drawPurchases(){
+    if(!purchaseList) return;
+    const {data,error}=await sb.from('purchase_requests').select('id,website_id,contact_name,contact_email,message,status,created_at').order('created_at',{ascending:false}).limit(30);
+    if(error){purchaseList.innerHTML='<div class="empty-state">'+escapeHtml(error.message)+'</div>';return;}
+    purchaseList.innerHTML=data?.length ? data.map(r=>'<div class="admin-row"><div><strong>'+escapeHtml(r.contact_name||r.contact_email||'Purchase request')+'</strong><small>'+escapeHtml(r.contact_email||'')+' · '+escapeHtml(r.website_id||'')+'<br>'+escapeHtml(r.message||'')+'</small></div><span>'+escapeHtml(r.status)+'</span><span>'+new Date(r.created_at).toLocaleString()+'</span><span class="admin-actions"><button data-purchase-close="'+escapeHtml(r.id)+'">Close</button></span></div>').join('') : '<div class="empty-state">No purchase requests yet.</div>';
+    purchaseList.querySelectorAll('[data-purchase-close]').forEach(b=>b.onclick=async()=>{
+      const {error}=await sb.from('purchase_requests').update({status:'closed'}).eq('id',b.dataset.purchaseClose);
+      if(error) alert(error.message); else drawPurchases();
     });
   }
 
