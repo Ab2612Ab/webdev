@@ -1,46 +1,159 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="webdev — a premium independent commerce house for considered essentials and statement pieces.">
-<meta name="theme-color" content="#0a0a09"><title>webdev — Objects with presence</title>
-<link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="webdev — premium websites and digital experiences designed and built for ambitious businesses.">
+<meta name="theme-color" content="#0a0a09">
+<title>webdev — Websites that move businesses forward.</title>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="announcement">Complimentary worldwide delivery on orders over $250 <span>·</span> Private client service available</div>
+<div class="announcement">Premium websites for ambitious businesses <span>·</span> New project slots available</div>
+
 <header class="nav">
 <a class="logo" href="#top" aria-label="webdev home">webdev<span>.</span></a>
-<nav><a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#story">Story</a><a href="#journal">Journal</a></nav>
-<div class="actions"><button data-open="search" aria-label="Search">⌕</button><button data-open="account" aria-label="Account">○</button><button data-open="cart" aria-label="Cart">Bag <b id="count">0</b></button></div>
+<nav>
+<a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a>
+</nav>
+<div class="actions">
+<button data-open="search" aria-label="Explore services">⌕</button>
+<button data-open="account" aria-label="Client portal">○</button>
+<button data-open="contact" aria-label="Start a project">Start <b>↗</b></button>
+</div>
 <button class="menu" data-open="menu" aria-label="Open menu">☰</button>
 </header>
+
 <main id="top">
 <section class="hero">
-<img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2200&q=88" alt="Editorial fashion portrait">
-<div class="hero-copy"><p class="eyebrow">THE NEW STANDARD / 2026</p><h1>Objects<br><em>with presence.</em></h1><p>Curated pieces for people who choose with intention. Designed to live beyond the moment.</p><div class="hero-actions"><a class="btn dark" href="#shop">Explore the collection <span>↗</span></a><a class="text-link" href="#story">Discover webdev</a></div></div>
-<div class="hero-note">01 — 04<br>NEW SEASON</div>
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=2200&q=88" alt="Designer working on a modern website interface">
+<div class="hero-copy">
+<p class="eyebrow">WEB DESIGN / DEVELOPMENT / 2026</p>
+<h1>Websites<br><em>that move.</em></h1>
+<p>We design and build premium digital experiences that make businesses look credible, communicate clearly and turn attention into action.</p>
+<div class="hero-actions">
+<a class="btn dark" href="#work">Explore our work <span>↗</span></a>
+<a class="text-link" href="#contact">Start a project</a>
+</div>
+</div>
+<div class="hero-note">01 — 04<br>DIGITAL EXPERIENCES</div>
 </section>
-<section class="marquee"><div>CONSIDERED DESIGN · QUIET CONFIDENCE · MADE TO STAY · </div><div>CONSIDERED DESIGN · QUIET CONFIDENCE · MADE TO STAY · </div></section>
-<section class="intro"><p class="eyebrow">A DIFFERENT KIND OF STORE</p><h2>Less noise.<br><em>More meaning.</em></h2><p>webdev brings together refined apparel, objects and everyday essentials through a single editorial lens. Every selection earns its place.</p></section>
-<section id="shop" class="section"><div class="section-head"><div><p class="eyebrow">SHOP / 01</p><h2>Signature pieces</h2></div><a href="#shop" class="text-link">View all ↗</a></div>
+
+<section class="marquee"><div>STRATEGY · DESIGN · DEVELOPMENT · CONVERSION · </div><div>STRATEGY · DESIGN · DEVELOPMENT · CONVERSION · </div></section>
+
+<section class="intro">
+<p class="eyebrow">A DIFFERENT KIND OF WEB STUDIO</p>
+<h2>Less template.<br><em>More identity.</em></h2>
+<p>webdev creates custom websites for companies, founders, agencies and professionals who need more than a generic online presence. Every page is shaped around the business, the audience and the next action you want visitors to take.</p>
+</section>
+
+<section id="work" class="section">
+<div class="section-head">
+<div><p class="eyebrow">SELECTED WORK / 01</p><h2>Digital experiences</h2></div>
+<a href="#contact" class="text-link">Build yours ↗</a>
+</div>
 <div class="products">
-<article class="product"><div class="product-media"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=88" alt="Minimal white sneaker"><button class="wish">♡</button><span>New</span></div><div class="product-info"><div><h3>Axis Runner</h3><p>Stone / engineered mesh</p></div><strong>$185</strong></div><button class="add" data-product="Axis Runner" data-price="185">Add to bag <span>+</span></button></article>
-<article class="product"><div class="product-media"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=88" alt="Editorial tailored coat"><button class="wish">♡</button><span>Signature</span></div><div class="product-info"><div><h3>Form Coat</h3><p>Wool / charcoal</p></div><strong>$420</strong></div><button class="add" data-product="Form Coat" data-price="420">Add to bag <span>+</span></button></article>
-<article class="product"><div class="product-media"><img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=1200&q=88" alt="Luxury black handbag"><button class="wish">♡</button><span>Limited</span></div><div class="product-info"><div><h3>Arc Carry</h3><p>Italian leather / black</p></div><strong>$310</strong></div><button class="add" data-product="Arc Carry" data-price="310">Add to bag <span>+</span></button></article>
-<article class="product"><div class="product-media"><img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1200&q=88" alt="Premium fragrance bottle"><button class="wish">♡</button><span>New</span></div><div class="product-info"><div><h3>01 / Nocturne</h3><p>Eau de parfum / 50ml</p></div><strong>$145</strong></div><button class="add" data-product="01 / Nocturne" data-price="145">Add to bag <span>+</span></button></article>
-</div></section>
-<section id="collections" class="feature-grid">
-<div class="feature large"><img src="https://images.unsplash.com/photo-1506629905607-d9b1c5e1c2c2?auto=format&fit=crop&w=1800&q=88" alt="Editorial collection"><div><p class="eyebrow">COLLECTION / 02</p><h2>The quiet<br>statement</h2><a class="btn light" href="#shop">Explore edit ↗</a></div></div>
-<div class="feature"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1300&q=88" alt="Textured wardrobe"><div><p class="eyebrow">ESSENTIALS</p><h3>Everyday, elevated.</h3><a class="text-link light-link" href="#shop">Shop essentials ↗</a></div></div>
+<article class="product">
+<div class="product-media"><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=88" alt="Modern SaaS dashboard website"><button class="wish" aria-label="Save project">♡</button><span>SaaS</span></div>
+<div class="product-info"><div><h3>Workflow OS</h3><p>Product strategy / SaaS interface</p></div><strong>01</strong></div>
+<button class="add" data-project="Workflow OS">View case study <span>↗</span></button>
+</article>
+
+<article class="product">
+<div class="product-media"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=88" alt="Premium ecommerce website interface"><button class="wish" aria-label="Save project">♡</button><span>E-commerce</span></div>
+<div class="product-info"><div><h3>Northline Store</h3><p>Brand system / commerce experience</p></div><strong>02</strong></div>
+<button class="add" data-project="Northline Store">View case study <span>↗</span></button>
+</article>
+
+<article class="product">
+<div class="product-media"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=88" alt="Analytics platform website"><button class="wish" aria-label="Save project">♡</button><span>Fintech</span></div>
+<div class="product-info"><div><h3>Ledger Labs</h3><p>UX / analytics / responsive build</p></div><strong>03</strong></div>
+<button class="add" data-project="Ledger Labs">View case study <span>↗</span></button>
+</article>
+
+<article class="product">
+<div class="product-media"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=88" alt="Healthcare website interface"><button class="wish" aria-label="Save project">♡</button><span>Healthcare</span></div>
+<div class="product-info"><div><h3>Careline</h3><p>Trust-led UX / service website</p></div><strong>04</strong></div>
+<button class="add" data-project="Careline">View case study <span>↗</span></button>
+</article>
+</div>
 </section>
-<section id="story" class="manifesto"><div><p class="eyebrow">OUR POINT OF VIEW</p><h2>Designed for the<br><em>long conversation.</em></h2></div><div><p>We believe the best objects don't compete for attention. They earn it slowly — through material, proportion, utility and the feeling they leave behind.</p><p>webdev is a living edit, not an endless catalogue. Fewer, better things. Chosen carefully and presented without distraction.</p><a class="text-link" href="#journal">Read our story ↗</a></div></section>
-<section class="trust"><p class="eyebrow">THE WEBDEV STANDARD</p><div class="trust-grid"><div><b>01</b><h3>Considered selection</h3><p>Every piece is chosen for quality, usefulness and lasting character.</p></div><div><b>02</b><h3>Human support</h3><p>Thoughtful assistance before, during and after every purchase.</p></div><div><b>03</b><h3>Simple returns</h3><p>A clear, customer-first returns experience with no unnecessary friction.</p></div><div><b>04</b><h3>Worldwide delivery</h3><p>Reliable delivery options prepared for wherever you are.</p></div></div></section>
-<section class="testimonials"><p class="eyebrow">FROM THE COMMUNITY</p><h2>Words from<br><em>people who choose well.</em></h2><div class="quote-wrap"><button class="quote-nav prev">←</button><blockquote id="quote">“The whole experience feels considered. Nothing is shouting for attention, yet everything feels special.”<cite>— Amara K. / Lagos</cite></blockquote><button class="quote-nav next">→</button></div></section>
-<section id="journal" class="journal"><div class="section-head"><div><p class="eyebrow">JOURNAL / 03</p><h2>Notes on choosing.</h2></div><a href="#journal" class="text-link">All stories ↗</a></div><div class="journal-grid"><article><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=88" alt="Editorial styling"><p>STYLE / 06 MIN READ</p><h3>Why restraint makes a stronger statement.</h3></article><article><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=88" alt="Modern fashion portrait"><p>PEOPLE / 04 MIN READ</p><h3>The personal uniform is having a moment.</h3></article><article><img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1200&q=88" alt="Curated wardrobe"><p>OBJECTS / 05 MIN READ</p><h3>Buy less. Notice more.</h3></article></div></section>
-<section class="newsletter"><p class="eyebrow">PRIVATE LIST</p><h2>Stay close to<br><em>what's next.</em></h2><p>New arrivals, considered edits and occasional invitations. No noise.</p><form id="newsletter"><input type="email" placeholder="Your email address" required aria-label="Email address"><button class="btn dark">Join the list ↗</button></form><small id="newsmsg"></small></section>
+
+<section id="services" class="feature-grid">
+<div class="feature large">
+<img src="https://images.unsplash.com/photo-1558655146-2c17c2c5f2d1?auto=format&fit=crop&w=1800&q=88" alt="Creative web design workspace">
+<div><p class="eyebrow">SERVICE / 02</p><h2>Strategy<br>before pixels.</h2><a class="btn light" href="#contact">Plan your website ↗</a></div>
+</div>
+<div class="feature">
+<img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1300&q=88" alt="Developer coding a responsive website">
+<div><p class="eyebrow">DEVELOPMENT</p><h3>Built to perform.</h3><a class="text-link light-link" href="#process">See the process ↗</a></div>
+</div>
+</section>
+
+<section id="process" class="manifesto">
+<div><p class="eyebrow">HOW WE WORK</p><h2>From rough idea<br><em>to real website.</em></h2></div>
+<div>
+<p><strong>01 / Discover.</strong> We clarify your offer, audience, goals, content and conversion path before design begins.</p>
+<p><strong>02 / Design.</strong> We create a distinctive visual direction, responsive layouts and interactions that fit your brand.</p>
+<p><strong>03 / Build.</strong> We turn the approved experience into a fast, responsive website with clean structure and scalable foundations.</p>
+<p><strong>04 / Launch.</strong> We test the experience across devices, refine the details and prepare the site for production.</p>
+<a class="text-link" href="#contact">Discuss your project ↗</a>
+</div>
+</section>
+
+<section id="about" class="trust">
+<p class="eyebrow">WHY WEBDEV</p>
+<div class="trust-grid">
+<div><b>01</b><h3>Custom, not copied</h3><p>Your website is designed around your business instead of being forced into a recycled template.</p></div>
+<div><b>02</b><h3>Business-first UX</h3><p>Every section has a job: explain the value, build confidence or move the visitor toward action.</p></div>
+<div><b>03</b><h3>Responsive by default</h3><p>The experience is designed to work across phones, tablets, laptops and large screens.</p></div>
+<div><b>04</b><h3>Built for growth</h3><p>We structure projects so new pages, content, integrations and features can be added later.</p></div>
+</div>
+</section>
+
+<section class="testimonials">
+<p class="eyebrow">CLIENT FEEDBACK / REPLACE BEFORE LAUNCH</p>
+<h2>What a strong<br><em>digital presence should feel like.</em></h2>
+<div class="quote-wrap">
+<button class="quote-nav prev" aria-label="Previous feedback">←</button>
+<blockquote id="quote">“The final experience should feel like the business itself — clear, credible and unmistakably yours.”<cite>— Sample positioning statement</cite></blockquote>
+<button class="quote-nav next" aria-label="Next feedback">→</button>
+</div>
+</section>
+
+<section class="journal">
+<div class="section-head"><div><p class="eyebrow">INSIGHTS / 03</p><h2>Notes on better websites.</h2></div><a href="#contact" class="text-link">Work with us ↗</a></div>
+<div class="journal-grid">
+<article><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=88" alt="Modern creative studio"><p>STRATEGY / 06 MIN READ</p><h3>Why your website should explain the business in seconds.</h3></article>
+<article><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=88" alt="Business team planning a project"><p>CONVERSION / 05 MIN READ</p><h3>Designing a homepage around the next decision.</h3></article>
+<article><img src="https://images.unsplash.com/photo-1559028012-dc7f3c6d6f8f?auto=format&fit=crop&w=1200&q=88" alt="Web design interface on laptop"><p>UX / 04 MIN READ</p><h3>What separates a polished website from a useful one.</h3></article>
+</div>
+</section>
+
+<section id="contact" class="newsletter">
+<p class="eyebrow">START A PROJECT</p>
+<h2>Have a business.<br><em>Let's build its website.</em></h2>
+<p>Tell us what you are building, what you need the website to do and where you want to take the business next.</p>
+<form id="newsletter">
+<input type="email" placeholder="Your email address" required aria-label="Email address">
+<button class="btn dark">Request a conversation ↗</button>
+</form>
+<small id="newsmsg"></small>
+</section>
 </main>
-<footer><div class="footer-top"><a class="logo" href="#top">webdev<span>.</span></a><p>A considered commerce experience for the modern customer.</p><div class="social"><a href="#top">Instagram</a><a href="#top">Pinterest</a><a href="#top">Journal</a></div></div><div class="footer-bottom"><span>© 2026 webdev. All rights reserved.</span><span>Privacy · Terms · Shipping · Returns</span><span>Custom domain: coming soon</span></div></footer>
-<div class="drawer" id="drawer"><div class="drawer-inner"><button class="close">×</button><div id="drawer-content"></div></div></div>
-<div class="toast" id="toast">Added to your bag.</div>
+
+<footer>
+<div class="footer-top">
+<a class="logo" href="#top">webdev<span>.</span></a>
+<p>Custom websites and digital experiences for ambitious businesses.</p>
+<div class="social"><a href="#contact">Instagram</a><a href="#contact">LinkedIn</a><a href="#contact">Email</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 webdev. All rights reserved.</span><span>Web Design · Development · Strategy</span><span>Custom domain: coming soon</span></div>
+</footer>
+
+<div class="drawer" id="drawer"><div class="drawer-inner"><button class="close" aria-label="Close">×</button><div id="drawer-content"></div></div></div>
+<div class="toast" id="toast">Project saved.</div>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
