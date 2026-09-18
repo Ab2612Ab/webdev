@@ -35,11 +35,22 @@ async function renderCatalog(){
         <div class="site-features">${(s.features||[]).slice(0,4).map(f=>`<span>${escapeHtml(f)}</span>`).join('')}</div>
         <div class="site-card-meta"><strong class="site-price">${money(s.price)}</strong><span>Ready to customize</span></div>
         <div class="site-actions">
-          <a href="client.html?website=${encodeURIComponent(s.id)}">Request preview ↗</a>
+          <a href="website.html?website=${encodeURIComponent(s.id)}">View details ↗</a>
           <a class="secondary" href="client.html?website=${encodeURIComponent(s.id)}">Buy / customize</a>
         </div>
       </div>
     </article>`).join('');
+}
+
+async function renderWebsiteDetail(){
+  const el=document.querySelector('#detail');
+  if(!el) return;
+  const id=new URLSearchParams(location.search).get('website');
+  if(!id){el.innerHTML='<div class="empty-state">No website was selected. <a href="websites.html">Return to catalog ↗</a></div>';return;}
+  const {data:s,error}=await sb.from('website_listings').select('*').eq('id',id).eq('published',true).maybeSingle();
+  if(error||!s){el.innerHTML='<div class="empty-state">This website is unavailable. <a href="websites.html">Return to catalog ↗</a></div>';return;}
+  const features=(s.features||[]).map(f=>'<span>'+escapeHtml(f)+'</span>').join('');
+  el.innerHTML='<div class="detail-media"><img src="'+escapeHtml(catalogImage(s))+'" alt="'+escapeHtml(s.name)+' website preview"></div><div class="detail-copy"><p class="eyebrow">'+escapeHtml(s.category)+' / WEBDEV MARKET</p><h1>'+escapeHtml(s.name)+'</h1><p class="detail-description">'+escapeHtml(s.description||'A polished, ready-to-customize website concept.')+'</p><div class="detail-price">'+money(s.price)+'</div><div class="site-features">'+features+'</div><div class="detail-actions"><a class="btn dark" href="client.html?website='+encodeURIComponent(s.id)+'">Buy / customize ↗</a>'+(s.demo?'<a class="btn light" target="_blank" rel="noopener" href="'+escapeHtml(s.demo)+'">Open preview ↗</a>':'<a class="btn light" href="contact.html">Request a preview ↗</a>')+'</div><div class="detail-notes"><div><b>Responsive</b><span>Phone, tablet and desktop ready.</span></div><div><b>Customizable</b><span>Branding, content, pages and integrations can be adapted.</span></div><div><b>Secure workspace</b><span>Submit project requirements and requests through the client area.</span></div></div><a class="text-link" href="websites.html">← Back to all websites</a></div>';
 }
 async function currentUser(){
   const {data}=await sb.auth.getUser();
