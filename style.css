@@ -136,3 +136,114 @@
  .client-workspace textarea{min-height:140px}
  .client-workspace .checklist{font-size:12px}
 }
+
+
+/* CLIENT WORKSPACE — OVERFLOW + MOBILE CARD REFINEMENT */
+#workspace,
+#projectArea,
+.client-project-grid,
+.client-project-grid > *,
+.client-workspace .admin-form {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.client-project-grid {
+  width: 100%;
+}
+
+.client-project-grid .admin-form {
+  overflow: hidden;
+}
+
+.client-email {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.client-workspace textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.client-workspace .btn {
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .client-workspace {
+    overflow: hidden;
+  }
+
+  .client-project-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .client-project-grid .admin-form {
+    width: 100%;
+    margin: 0 0 12px;
+  }
+
+  .client-workspace #projectArea > .admin-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .client-workspace {
+    padding: 16px !important;
+  }
+
+  .client-workspace .admin-form {
+    padding: 17px;
+    margin-bottom: 12px;
+  }
+
+  .client-project-grid {
+    gap: 0;
+  }
+
+  .client-project-grid .admin-form {
+    padding: 17px;
+    margin-bottom: 12px;
+  }
+
+  .client-project-grid .eyebrow {
+    margin-bottom: 10px;
+  }
+
+  .client-project-grid h2 {
+    font-size: 22px;
+    line-height: 1.12;
+    margin-bottom: 8px;
+  }
+
+  .client-email {
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+  }
+
+  .client-workspace #requestText {
+    min-height: 150px;
+    line-height: 1.5;
+  }
+
+  .client-workspace #sendRequest {
+    width: 100%;
+  }
+
+  .client-checklist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
