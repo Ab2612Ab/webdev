@@ -116,3 +116,23 @@
   .client-checklist{grid-template-columns:1fr}
   .client-checklist span{white-space:normal}
 }
+
+/* CLIENT WORKSPACE — DESKTOP + MOBILE LAYOUT FIX */
+.client-workspace{width:100%;max-width:1180px;margin:0 auto}
+.client-workspace .portal-card{max-width:none!important;width:100%}
+.client-workspace .workspace-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.client-workspace .setup-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.client-workspace textarea{min-height:150px;resize:vertical}
+.client-workspace .checklist{line-height:2}
+@media(max-width:800px){
+ .client-workspace .workspace-grid,.client-workspace .setup-grid{grid-template-columns:1fr}
+ .client-workspace .portal-card{padding:24px}
+}
+@media(max-width:560px){
+ .client-workspace .portal-card{padding:18px}
+ .client-workspace .workspace-grid,.client-workspace .setup-grid{gap:10px}
+ .client-workspace .portal-card h1{font-size:42px}
+ .client-workspace .portal-card h2{font-size:23px}
+ .client-workspace textarea{min-height:140px}
+ .client-workspace .checklist{font-size:12px}
+}
