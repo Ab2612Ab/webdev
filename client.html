@@ -7,7 +7,14 @@ const authMsg=document.querySelector('#clientAuthMsg');
 
 function getAuthRedirectUrl(){
   const target='client.html'+(websiteId?'?website='+encodeURIComponent(websiteId):'');
-  return new URL(target,location.origin).toString();
+  const host=location.hostname;
+  // Live Server normally runs on port 5500. Keep localhost confirmation links
+  // aligned with the local app so Supabase returns the user to the page that
+  // actually issued the signup request.
+  const localOrigin=(host==='localhost'||host==='127.0.0.1')
+    ? location.protocol+'//'+host+(location.port||'5500')
+    : location.origin;
+  return new URL(target,localOrigin).toString();
 }
 async function loadSite(){
   if(!websiteId)return;
