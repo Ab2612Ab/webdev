@@ -247,3 +247,12 @@
     gap: 8px;
   }
 }
+
+/* MOBILE: compact PROJECT STATUS + ACCOUNT cards */
+@media (max-width:560px){
+  .client-project-grid .admin-form{padding:12px 14px;margin-bottom:10px}
+  .client-project-grid .admin-form .eyebrow{margin-bottom:7px}
+  .client-project-grid h2{font-size:20px;line-height:1.12;margin:0 0 6px}
+  .client-project-grid .client-email{font-size:15px!important;line-height:1.2!important;margin-bottom:8px}
+  .client-project-grid #logoutClient{min-height:42px;padding:10px 14px;margin-top:4px}
+}
